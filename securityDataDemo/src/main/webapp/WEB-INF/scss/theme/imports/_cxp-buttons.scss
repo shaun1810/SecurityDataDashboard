@@ -1,0 +1,241 @@
+/* BUTTONS */
+.btn {
+	border: 1px solid rgba(50, 51, 50, 0.5);
+	background-color:transparent;
+	padding: 11px 19px;
+	font-size:11px;
+	font-weight:700;
+	@include transition(border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s);
+	outline: none;
+	border-radius: 5px;
+}
+.btn:active, .btn.active {
+	box-shadow:none;
+}
+
+.btn-panel {
+	background-color:transparent;
+	color: $charcoal;
+	border-color: $lake;
+}
+
+.btn-panel:hover,
+.btn-panel:focus,
+.btn-panel:active,
+.btn-panel.active, 
+.open .dropdown-toggle.btn-panel {
+	background-color: $lake;
+	border-color: $lake;
+}
+
+
+.btn-default,
+.wizard-cancel,
+.wizard-back {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+	color: $charcoal;
+	text-transform:uppercase;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active, 
+.open .dropdown-toggle.btn-default,
+.wizard-cancel:hover,
+.wizard-cancel:focus,
+.wizard-cancel:active,
+.wizard-cancel.active,
+.wizard-back:hover,
+.wizard-back:focus,
+.wizard-back:active,
+.wizard-back.active {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+	color: $charcoal;
+}
+.btn-default .caret {
+	border-top-color: #FFFFFF;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active, 
+.open .dropdown-toggle.btn-default {
+	background-color: $gray-color-dark;
+	border-color: #5c6667;
+}
+
+.btn-info {
+	background-color: #01b9fe;
+	border-color: #0298d1;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active, 
+.open .dropdown-toggle.btn-info {
+	background-color: #0298d1;
+	border-color: #0178a5;
+}
+.btn-link {
+	border: none;
+}
+.btn-light {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+	color: $charcoal;
+	text-transform:uppercase;
+}
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active,
+.btn-light.active, 
+.open .dropdown-toggle.btn-light {
+	background-color: #D9EFD4;
+	border-color: $ncr-green;
+}
+.btn-light {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+}
+.btn-light.disabled, .btn-light.disabled:hover, .btn-light.disabled:focus, .btn-light.disabled.focus, .btn-light.disabled:active, .btn-light.disabled.active, .btn-light[disabled], .btn-light[disabled]:hover, .btn-light[disabled]:focus, .btn-light[disabled].focus, .btn-light[disabled]:active, .btn-light[disabled].active, fieldset[disabled] .btn-light, fieldset[disabled] .btn-light:hover, fieldset[disabled] .btn-light:focus, fieldset[disabled] .btn-light.focus, fieldset[disabled] .btn-light:active, fieldset[disabled] .btn-light.active {
+	  background-color: rgba(50, 51, 50, 0.5);
+	  color: rgba(50, 51, 50, 0.8);
+	  border-color: rgba(50, 51, 50, 0.5);
+}
+.btn-dark {
+	background-color: transparent;
+	border-color: rgba(255, 255, 255, 0.5);
+	color: $white;
+	text-transform:uppercase;
+}
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active,
+.btn-dark.active, 
+.open .dropdown-toggle.btn-dark {
+	background-color: #D9EFD4;
+	border-color: $ncr-green;
+}
+.btn-dark.disabled, .btn-dark.disabled:hover, .btn-dark.disabled:focus, .btn-dark.disabled.focus, .btn-dark.disabled:active, .btn-dark.disabled.active, .btn-dark[disabled], .btn-dark[disabled]:hover, .btn-dark[disabled]:focus, .btn-dark[disabled].focus, .btn-dark[disabled]:active, .btn-dark[disabled].active, fieldset[disabled] .btn-dark, fieldset[disabled] .btn-dark:hover, fieldset[disabled] .btn-dark:focus, fieldset[disabled] .btn-dark.focus, fieldset[disabled] .btn-dark:active, fieldset[disabled] .btn-dark.active {
+	  background-color: rgba(255, 255, 255, 0.5);
+	  color: rgba(255, 255, 255, 0.8);
+	  border-color: rgba(255, 255, 255, 0.5);
+}
+.btn-graph {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+	color: rgba(50, 51, 50, 0.5);
+	text-transform:uppercase;
+}
+.btn-graph:hover,
+.btn-graph:focus,
+.btn-graph:active,
+.btn-graph.active, 
+.open .dropdown-toggle.btn-graph {
+	background-color: #D9EFD4;
+	border-color: $ncr-green;
+}
+.btn-graph {
+	background-color: transparent;
+	border-color: rgba(50, 51, 50, 0.5);
+}
+.btn-graph.disabled, .btn-graph.disabled:hover, .btn-graph.disabled:focus, .btn-graph.disabled.focus, .btn-graph.disabled:active, .btn-graph.disabled.active, .btn-graph[disabled], .btn-graph[disabled]:hover, .btn-graph[disabled]:focus, .btn-graph[disabled].focus, .btn-graph[disabled]:active, .btn-graph[disabled].active, fieldset[disabled] .btn-graph, fieldset[disabled] .btn-graph:hover, fieldset[disabled] .btn-graph:focus, fieldset[disabled] .btn-graph.focus, fieldset[disabled] .btn-graph:active, fieldset[disabled] .btn-graph.active {
+	  background-color: rgba(50, 51, 50, 0.5);
+	  color: rgba(50, 51, 50, 0.8);
+	  border-color: rgba(50, 51, 50, 0.5);
+}
+.btn-preferred {
+	border: 1px solid rgba(50, 51, 50, 0.5);
+}
+.btn-preferred:hover,
+.btn-preferred:focus,
+.btn-preferred:active,
+.btn-preferred.active, 
+.open .dropdown-toggle.btn-preferred {
+	background-color: #D9EFD4;
+	border-color: $ncr-green;
+	border-width: 1px;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active, 
+.open .dropdown-toggle.btn-primary {
+	background-color: #2980b9;
+	border-color: #1c5c87;
+}
+.btn-success {
+	background-color: $green-color;
+	border-color: $green-color-dark;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active, 
+.open .dropdown-toggle.btn-success {
+	background-color: $green-color-dark;
+}
+.btn-danger {
+	background-color: $red-color;
+	border-color: $red-color-dark;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active, 
+.open .dropdown-toggle.btn-danger {
+	background-color: $red-color-dark;
+}
+.btn-warning {
+	background-color: $yellow-color;
+	border-color: $yellow-color-dark;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active, 
+.open .dropdown-toggle.btn-warning {
+	background-color: #e0b50a;
+	border-color: #bd9804;
+}
+.btn-group-sm>.btn, .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.btn-facebook {
+	background-color: #3b5998 !important;
+	border-color: #2f477b !important;
+
+	&:hover {
+		background-color: #2f477b !important;
+		border-color: #263963 !important;
+	}
+}
+.btn-twitter {
+	background-color: #00aced !important;
+	border-color: #0098d1 !important;
+
+	&:hover {
+		background-color: #0098d1 !important;
+		border-color: #0283b4 !important;
+	}
+}
+
+.icon-box {
+	margin-top: 5px;
+
+	.btn {
+		border: 1px solid #e1e1e1;
+		margin-left: 3px;
+		margin-right: 0;
+	
+		&:hover {
+			background-color: #eee;
+			color: $primary-color;
+		}
+	}
+}

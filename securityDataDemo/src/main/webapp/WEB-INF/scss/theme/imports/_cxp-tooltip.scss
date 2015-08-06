@@ -1,0 +1,90 @@
+// ---------------------------------------------------
+// CxP Tooltips
+// --------------------------------------------------
+
+.demo-controls {
+	color:$white;
+	margin:11px 22px;
+	i {
+		&:first-child {
+			margin-right:16px;
+		}
+		&:hover {
+			cursor:pointer;
+		}
+	}
+}
+
+// Base class
+.tooltip {
+  position: absolute;
+  display: block;
+  visibility: visible;
+  // Reset font and text propertes given new insertion method
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.4;
+  @include opacity(0);
+
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  padding: 3px 8px;
+  color: $charcoal;
+  text-align: center;
+  text-decoration: none;
+  background-color: $white;
+  border-radius: 0px;
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.35);
+-moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.35);
+box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.35);
+}
+
+// Arrows
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+// Note: Deprecated .top-left, .top-right, .bottom-left, and .bottom-right as of v3.3.1
+.tooltip {
+  &.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    border-top-color: $white;
+  }
+  &.top-left .tooltip-arrow {
+    bottom: 0;
+    border-top-color: $white;
+  }
+  &.top-right .tooltip-arrow {
+    bottom: 0;
+    border-top-color: $white;
+  }
+  &.right .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    border-right-color: $white;
+  }
+  &.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    border-left-color: $white;
+  }
+  &.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    border-bottom-color: $white;
+  }
+  &.bottom-left .tooltip-arrow {
+    top: 0;
+    border-bottom-color: $white;
+  }
+  &.bottom-right .tooltip-arrow {
+    top: 0;
+    border-bottom-color: $white;
+    }
+    }
+    }

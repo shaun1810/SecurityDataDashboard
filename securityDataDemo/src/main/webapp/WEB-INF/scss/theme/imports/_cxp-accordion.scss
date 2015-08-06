@@ -1,0 +1,488 @@
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+	box-shadow:none;
+}
+
+.panel-default > .panel-heading {
+	position: relative;
+	background-color: $white;
+	border-color: $primary-color;
+	color: $pewter;
+	padding: 0px 18px;
+	@include border-radius(0);
+
+	h4.panel-title {
+		font-size: 14px;
+		height:45px;
+		line-height: 45px;
+		a {
+		   display:block;
+		   height:100%;
+		   width:100%;
+		}
+
+		i {
+			position: absolute;
+			top: 17px;
+			right: 15px;
+
+			&.rotate {
+				-ms-transform: rotate(180deg); /* IE 9 */
+			    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+			    transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+
+.panel-default > .panel-heading > i.rotate {
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+.panel-default > .panel-heading a:focus {
+	text-decoration:none;
+	color: $charcoal;
+}
+.panel-default > .panel-heading a.open {
+		font-weight:700;
+}
+.panel-group .panel {
+	@include border-radius(0);
+	border-bottom: 1px solid $pewter-light;
+	border-left: 1px solid $pewter-light;
+	border-right: 1px solid $pewter-light;
+	&:first-child {
+		border-top: 1px solid $pewter-light;
+	}
+}
+.panel-collapse {
+	border: none;
+	border-top: 0;
+}
+.panel-group .panel+.panel { 
+  	margin-top: 0px;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  background-color: $sky;
+  padding: 18px 20px 7px 20px;
+}
+
+.panel-default > .panel-heading a:hover {
+	text-decoration:none;
+	color:$pewter;
+	}
+.accordion .panel-title > a {
+	display: block;
+	position: relative;
+	outline: none;
+	text-decoration: none;  
+	color: $pewter;
+	padding-right: 15px;
+	width: 100%;
+	height: 100%;
+
+	&:hover {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	&:after {
+		content: "\f068";
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: none;
+		margin-top: -5px;
+		font-size: 0.75em;
+		position: absolute;
+		right: 0;
+		top: 50%;
+	}
+	&.accordion-toggle.collapsed:after {
+		content: "\f067";
+	}
+	&.accordion-toggle > i {
+		width: 24px;
+		text-align: center;
+		padding-right: 6px;
+	}
+}
+
+
+//-------------------------------------------
+// Panel Body 
+//-------------------------------------------
+
+.panel-body {
+
+	label {
+		color: $charcoal;
+	}
+
+	input.form-control {
+		background: none;
+		border: none;
+		border-bottom: 1px solid rgba(50, 51, 50, 0.5);
+		border-radius: 0px;
+
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}
+
+//-------------------------------------------
+// Panel Body - Detail List
+//-------------------------------------------
+
+.panel-body {
+	ul.detail-list {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		list-style-image: none;
+		border-right: 1px solid $lake;
+	}
+
+	ul.detail-list > li {
+		padding: 0px;
+		margin: 0px;
+		border-bottom: 1px solid $lake;
+
+		&.first {
+			border-top: none;
+		}
+
+		&.last {
+			border-bottom: none;
+		}
+
+		&:hover {
+			ul.submenu {
+				display: block;
+			}
+		}
+
+		&.active > a {
+		  background: $rain;
+		  font-weight: bold;
+
+		  &:before {
+		  	content:"";
+		  	position: absolute;
+			top: 0px;
+			right: -10px;
+			z-index: 0;
+		  	height: 0px;
+		  	width: 0px;
+		  	border-top: 28px solid transparent;
+		  	border-bottom: 28px solid transparent;
+		  	border-left: 10px solid $lake;
+		  }
+		  &:after {
+		  	content:"";
+		  	position: absolute;
+			top: 0px;
+			right: -9px;
+			z-index: 1;
+		  	height: 0px;
+		  	width: 0px;
+		  	border-top: 28px solid transparent;
+		  	border-bottom: 28px solid transparent;
+		  	border-left: 10px solid $rain;
+		  }
+
+		  span {
+		  	font-weight: normal;
+		  }
+		}
+
+		&:hover > a > i {
+		  opacity: 1;
+		}
+	}
+
+	ul.detail-list > li > a {
+		font-size: 13px;
+		color: $charcoal;
+		padding: 10px 10px;
+		display: block;
+		width: 100%;
+		position: relative;
+		text-decoration: none;
+
+		&:hover {
+			background: $rain;
+		}
+
+		span {
+			display: block;
+			font-size: 12px;
+			color: $royal_blue;
+		}
+	}
+
+	ul.detail-list > li > a > i {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		opacity: 0.5;
+	}
+}
+
+//-------------------------------------------
+// Accordion - Panel Tabs
+//-------------------------------------------
+
+.open {
+	.panel-tabs {
+		display: block;
+	}
+}
+
+.panel-tabs {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -135px;
+	width: 270px;
+	text-align: center;
+
+	a {
+		position: relative;
+		display: inline-block;
+		line-height: 35px;
+		text-align: center;
+		padding: 5px 15px;
+
+		&.active {
+			background: $sky;
+
+			&:before {
+				content:"";
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				z-index: 0;
+				margin-left: -10px;
+				border-right: 10px solid transparent;
+				border-left: 10px solid transparent;
+				border-top: 10px solid $lake;
+			}
+			&:after {
+				content:"";
+				position: absolute;
+				bottom: -9px;
+				left: 50%;
+				z-index: 1;
+				margin-left: -10px;
+				border-right: 10px solid transparent;
+				border-left: 10px solid transparent;
+				border-top: 10px solid $sky;
+			}
+		}
+	}
+}
+
+//-------------------------------------------
+// Panel Body - Detail Table
+//-------------------------------------------
+
+.panel-body {
+	table.detail-table {
+		td, th {
+			height: 48px;
+		}
+
+		i {
+			color: $royal_blue;
+			font-size: 20px;
+			vertical-align: top;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+	}
+}
+
+//-------------------------------------------
+// Panel Body - Sort List
+//-------------------------------------------
+
+.sort-list {
+	color: $white;
+	font-size: 12px;
+	border-bottom: 1px solid $lake;
+	border-right: 1px solid $lake;
+
+	.sort-header {
+		background: $royal_blue;
+		padding: 5px 10px;
+		overflow: hidden;
+
+		a {
+			color: $white;
+
+			&:hover,
+			&:visited,
+			&:focus,
+			&:active {
+				color: $white;
+				text-decoration: none;
+			}
+		}
+
+		> span {
+			float: right;
+			display: inline-block;
+			opacity: 0.7;
+		}
+	}
+
+	i {
+		margin-left: 10px;
+		color: $royal_blue;
+		font-size: 14px;
+	}
+}
+
+//-------------------------------------------
+// Panel Body - Pagination
+//-------------------------------------------
+
+.panel-body {
+	#pagination-container {
+		// background: $lake;
+
+		.records-showing {
+			// color: $royal_blue;
+		}
+
+		.pagination > li {
+			> a,
+			> span {
+				// color: $royal_blue;
+			}
+		}
+	}
+}
+
+//-------------------------------------------
+// Panel Status
+//-------------------------------------------
+
+.open {
+	.panel-status {
+		display: block;
+	}
+}
+
+.panel-status {
+	display: none;
+	position: absolute;
+	top: 0px;
+	right: 25px;
+	width:110px;
+	text-align: right;
+	padding: 5px 15px 5px 0px;
+
+	a {
+		display: inline-block;
+	}
+
+	i {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		text-align: center;
+		line-height: 35px;
+		border-radius: 5px;
+
+		&.active {
+			background-color: $lake;
+		}
+
+		&:hover {
+			background-color: $lake;
+			cursor:pointer;
+		}
+	}
+
+}
+
+//-------------------------------------------
+// Panel Wrapper
+//-------------------------------------------
+
+.panel-wrapper {
+	padding: 0px;
+
+	label {
+		display: block;
+		line-height: 40px;
+		margin: 0px;
+		font-size: 14px;
+		font-weight: bold;
+		color: $charcoal;
+		border-bottom: 1px solid $lake;
+	}
+
+}
+
+//-------------------------------------------
+// Panel Wrapper
+//-------------------------------------------
+
+.tag-wrap {
+	padding: 10px 0px;
+	.tag {
+		display: inline-block;
+		padding: 2px 10px;
+		margin: 3px 2px;
+		border-radius: 3px;
+		background: $pistachio;
+		color: $charcoal;
+
+		i {
+			margin-left: 5px;
+			color: $shamrock;
+			opacity: 0.5;
+
+			&:hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+
+		&:hover {
+			
+		}
+	}
+}
+
+
+
+// .content-action {
+// 	position:relative;
+// 	display:inline-block;
+// 	float:right;
+// 	height:45px;
+// 	line-height: 45px;
+// 	width:125px;
+// 	margin: 0px 10px;
+// }
+
+// .content-selector {
+// 	position:relative;
+// 	display:inline-block;
+// 	float:right;
+// 	height:45px;
+// 	line-height: 45px;
+// }
+

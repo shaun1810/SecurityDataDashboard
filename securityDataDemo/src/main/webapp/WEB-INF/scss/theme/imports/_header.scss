@@ -1,0 +1,51 @@
+
+
+// ----------------------------------------------
+// NCR Header Navbar
+// ----------------------------------------------
+
+#header-navbar {
+    border: none;
+    @include border-radius(0);
+    margin: -15px -15px 0px -15px;
+    padding: 0px;
+    color: $charcoal;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background-color: $mantis;
+
+    .inner {
+    	height: 55px;
+    	line-height: 55px;
+    	padding: 0px 15px;
+    }
+}
+
+// ----------------------------------------------
+// NCR Page Header 
+// ----------------------------------------------
+
+.page-header {
+	margin: 0px 0px 15px 0px;
+	padding: 10px 10px;
+	background: $smoke;
+	z-index: 100;
+	width: 100%;
+
+	h1 {
+		margin: 0px;
+		padding: 0px;
+	}
+
+}
+
+// ----------------------------------------------
+// NCR Breadcrumbs 
+// ----------------------------------------------
+
+.breadcrumb {
+	margin: 0px;
+	padding: 0px;
+
+}
