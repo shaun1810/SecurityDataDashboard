@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/morris.css" type="text/css" />
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/daterangepicker.css" type="text/css" />
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/jquery-jvectormap-1.2.2.css" type="text/css" />
+	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test.css" type="text/css" />
 	
 	<!-- Favicon -->
 	<link type="image/x-icon" href="/securityDataDemo/src/main/webapp/WEB-INF/favicon.png" rel="shortcut icon" />
@@ -358,11 +359,29 @@
 
 								<div class="col-lg-12">
 
-									<ul class="nav nav-tabs" role="tablist">
-										<li role="presentation" class="nothing col-md-4"><a href="#nothing" aria-controls="nothing" role="tab" data-toggle="tab">Active</a></li>
-										<li role="presentation" class="issue col-md-4"><a href="#issue" aria-controls="issue" role="tab" data-toggle="tab">Issue</a></li>
-										<li role="presentation" class="warning col-md-4"><a href="#warning" aria-controls="warning" role="tab" data-toggle="tab">Warning</a></li>
-									</ul>
+									<ul class="nav nav-justified" role="tablist">
+												<li role="presentation" class="nothing"><a href="#nothing" aria-controls="nothing" role="tab" data-toggle="tab">
+													<div class="ticket-box nothing-ticket">
+														<span class="ticket-title">Active</span>
+														<span class="ticket-number">1234</span>
+														<span class="ticket-percent">50&#37;</span>
+													</div>
+												</a></li>
+												<li role="presentation" class="issue"><a href="#issue" aria-controls="issue" role="tab" data-toggle="tab">
+													<div class="ticket-box issue-ticket">
+														<span class="ticket-title">Issue</span>
+														<span class="ticket-number">234</span>
+														<span class="ticket-percent">40&#37;</span>
+													</div>
+												</a></li>
+												<li role="presentation" class="warning"><a href="#warning" aria-controls="warning" role="tab" data-toggle="tab">
+													<div class="ticket-box warning-ticket">
+														<span class="ticket-title">Warning</span>
+														<span class="ticket-number">34</span>
+														<span class="ticket-percent">10&#37;</span>
+													</div>
+												</a></li>
+											</ul>
 
 									<div class="tab-content">
 										<div role="tabpanel" class="tab-pane" id="nothing">

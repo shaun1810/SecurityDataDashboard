@@ -1,0 +1,71 @@
+.ticket-box:hover .ticket-title, .ticket-box:hover .ticket-number {
+	text-decoration: underline;
+}
+.ticket-box .ticket-title {
+	float: left;
+	width: 115%;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 1em;
+	font-weight: 700;
+	margin-top: -10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: -15px;
+	padding-left: 15px;
+	overflow: block;
+}
+.ticket-box .ticket-number {
+	float: left;
+	width: 100%;
+	text-align: left;
+	font-size: 1.75em;
+	font-weight: 100;
+}
+.ticket-box .ticket-percent {
+	float: left;
+	width: 100%;
+	text-align: right;
+	color: #fff;
+	font-size: 2.75em;
+	font-weight: 700;
+	margin-top: -15px;
+	margin-bottom: -13px;
+}
+
+.nothing-ticket .ticket-title {
+	background-color: #94CF88;
+}
+.issue-ticket .ticket-title {
+	background-color: #EEE16F;
+}
+.warning-ticket .ticket-title {
+	background-color: #FF9B98;
+}
+.nav .nothing {
+	background-color: #70BF60;
+}
+.nav .issue {
+	background-color: #E8D73F;
+}
+.nav .warning {
+	background-color: #FF7A75;
+}
+.ticket-header-number {
+	width: 100%;
+	float: left;
+	font-size: 2.5em;
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+.ticket-header-title {
+	width: 100%;
+	float: left;
+	font-weight: 300;
+	margin-top: -10px;
+}
+
+body {
+	font-family: 'Lato', sans-serif !important;
+}
+}
