@@ -68,4 +68,11 @@
 body {
 	font-family: 'Lato', sans-serif !important;
 }
+
+#tickets {
+	margin-bottom: 15px;
+}
+
+.madSkillz {
+	width: 100%;
 }
