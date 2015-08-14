@@ -382,7 +382,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm2" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 00456792</span>
@@ -396,7 +396,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm3" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
@@ -410,7 +410,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm4" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 00456792</span>
@@ -424,7 +424,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm5" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
