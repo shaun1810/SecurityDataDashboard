@@ -103,4 +103,9 @@ function initialize() {
     	map.panTo(new google.maps.LatLng(56.4626629,-2.9840888));
     });
     
+    $('#vidlink').on('click', function(event) {
+    	event.preventDefault();
+    	window.location.href = "http://stackoverflow.com";
+    });
+    
 }

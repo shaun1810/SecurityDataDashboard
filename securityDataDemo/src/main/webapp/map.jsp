@@ -72,13 +72,13 @@
 									</a>
 									<ul class="submenu">
 										<li class="active">
-											<a href="index.html">
+											<a href="index.jsp">
 												Index
 											</a>
 										</li>
 										<li>
-											<a href="#">
-												Profile
+											<a href="http://192.168.1.123:3700/interface">
+												Video
 											</a>
 										</li>
 										<li>
@@ -604,6 +604,15 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
                                          
                                          <div id="map_wrapper">
 										    <div id="map_canvas" class="mapping"></div>
+										</div>
+										<div>
+											<a href="http://192.168.1.123:3700/interface">
+												Video
+											</a>
+											
+											<a href="index.jsp">
+												Index
+											</a>
 										</div>
                                         </div>
                                         
