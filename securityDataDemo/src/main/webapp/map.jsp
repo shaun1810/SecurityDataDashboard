@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>NCR Dashboard</title>
-	
 	<!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="/securityDataDemo/src/main/webapp/WEB-INF/css/bootstrap/bootstrap.min.css" />
 	
@@ -85,6 +84,7 @@
 										<li>
 											<a href="#">
 												Settings
+												<%out.print(eventID); %>
 											</a>
 										</li>
 										<li>

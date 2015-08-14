@@ -1,3 +1,4 @@
+
 jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
@@ -23,14 +24,17 @@ function initialize() {
     ];
                         
     // Info Window Content
-    var infoWindowContent = [
+    
+    var infoWindowContent = [ 
         ['<div class="info_content">' +
         '<h3>London Eye</h3>' +
-        '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
+        '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'],
         ['<div class="info_content">' +
         '<h3>Palace of Westminster</h3>' +
         '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
+        '<p><%out.print(eventID);%></p>' +
         '</div>']
+        
     ];
         
     // Display multiple markers on a map
@@ -51,6 +55,7 @@ function initialize() {
             return function() {
                 infoWindow.setContent(infoWindowContent[i][0]);
                 infoWindow.open(map, marker);
+                
             }
         })(marker, i));
 
