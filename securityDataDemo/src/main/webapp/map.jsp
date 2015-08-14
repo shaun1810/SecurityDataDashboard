@@ -84,7 +84,6 @@
 										<li>
 											<a href="#">
 												Settings
-												<%out.print(eventID); %>
 											</a>
 										</li>
 										<li>
