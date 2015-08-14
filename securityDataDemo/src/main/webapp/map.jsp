@@ -368,7 +368,7 @@
                                 <div class="col-md-12 h2-content">
                                     <div class="row">
                                         <div class="col-md-6 h2-left">
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm1" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
