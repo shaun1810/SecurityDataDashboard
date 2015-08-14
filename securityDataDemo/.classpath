@@ -33,11 +33,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ss185617/workspace/securityDataDemo/target/securityDataDemo/WEB-INF/mongo-java-driver-2.12.3.jar" sourcepath="src/main/webapp/WEB-INF">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="target/securityDataDemo/WEB-INF/mongo-java-driver-2.12.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

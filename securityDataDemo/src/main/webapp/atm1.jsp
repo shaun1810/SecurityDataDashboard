@@ -14,32 +14,46 @@ import = "java.util.*"
 
 <html>
 <body>
-<h2>Atm1</h2>
+
 
 <% 
-MongoClient mongo = new MongoClient("LocalHost", 27017);
-DB db = mongo.getDB("windowsLogs");
-DBCollection collection = db.getCollection("log");
-BasicDBObject query = new BasicDBObject("Log Name:", "Security");
+MongoClient mongo = new MongoClient("10.93.68.125", 27017);
+DB db = mongo.getDB("WL");
+DBCollection collection = db.getCollection("testCol");
+BasicDBObject query = new BasicDBObject("Event ID", "2684616731");
 DBCursor cursor = collection.find(query);
-try{
+String eventID = null;
+String logName = null;
+String source = null;
+String level = null;
+String user = null;
+String logged = null;
+String taskCat = null;
+String computer = null;
+String message = null;
+
+
+try
+{
 	while (cursor.hasNext())
 	{
 		DBObject data = cursor.next();
-		
-		String eventID = data.get("Event ID:").toString();
-		%>
-		
-		<h3><%out.println("Event ID:" + data.get("Event ID:")); %></h3>
-		<h3><%if(eventID.compareTo("4672")== 0) {out.println("Illegal Administrator Access");}%></h3>
-<% 
+		eventID = data.get("Event ID").toString();
+		computer = data.get("Computer").toString();
+		logName = data.get("Log Name").toString();
+		logged = data.get("Logged").toString();
+
 	}
 	}
-	finally{
+	finally {
 		cursor.close();
 	}
-%>
-
+	
+	%>
+<h2>ATM:<%out.print(computer); %></h2>
+<h3>Event ID: <%out.print(eventID);%></h3>	
+<h3>Problem: <%if(eventID.compareTo("2684616731") == 0){out.print("ATM Disconnected from network");} %></h3>
+<h3>Logged: <%out.print(logged);%></h3>
 <a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a>
 </body>
