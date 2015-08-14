@@ -33,17 +33,13 @@ function initialize() {
         ['<div class="info_content">' +
         '<h3>Palace of Westminster</h3>' +
         '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-<<<<<<< HEAD
-        '<p><%out.print(eventID);%></p>' +
-        '</div>']
-        
-=======
-        '</div>'],
+        '<p><%out.print(eventID);%></p>'
+        + '</div>']+
         ['<div class="info_content">' +
          '<h3>Royal Opera House</h3>' +
          '<p>The Royal Opera House is an opera house and major performing arts venue in Covent Garden, central London.</p>' +
          '</div>']
->>>>>>> origin/master
+
     ];
         
     // Display multiple markers on a map
