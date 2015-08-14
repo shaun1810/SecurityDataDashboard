@@ -593,10 +593,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                       
+                                        
                                         <div class="col-md-6 h2-right">
+                                        
+                                        <!--
                                             <iframe width="100%" height="700" frameborder="0" style="border:0"
 src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Dundee%2C%20United%20Kingdom&key=AIzaSyDTvXIySHIZrS6lsoLjjg0SLRKzlSuQ5PU" allowfullscreen></iframe>
+                                        
+                                         --> 
+                                         
+                                         <div id="map_wrapper">
+										    <div id="map_canvas" class="mapping"></div>
+										</div>
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -618,6 +629,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/bootstrap.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.nanoscroller.min.js"></script>
+	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map.js"></script>
 	
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/demo.js"></script> <!-- only for demo -->
 	
