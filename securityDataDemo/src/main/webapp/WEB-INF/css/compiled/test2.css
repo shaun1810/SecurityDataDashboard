@@ -64,15 +64,9 @@
 	font-weight: 300;
 	margin-top: -10px;
 }
-
-body {
-	font-family: 'Lato', sans-serif !important;
-}
-
 #tickets {
 	margin-bottom: 15px;
 }
-
 .madSkillz {
 	width: 100%;
 }
@@ -128,6 +122,21 @@ body {
 .h2-title .ticket-nav .warning {
 	color: #FF7A75;
 }
+.h2-title .ticket-nav .notification {
+	position: absolute;
+	background-color: #FFBB35;
+	color: #323332;
+	font-size: 0.75em;
+	font-weight: 700;
+	top: 8px;
+	padding: 0px 5px;
+	border-radius: 50%;
+	transition: 0.5s ease all;
+}
+.h2-title .ticket-nav .ticket:hover .notification {
+	top: 2px;
+	transition: 0.5s ease all;
+}
 .h2-left {
 	margin-left: -30px;
 	height: 700px;
@@ -138,6 +147,12 @@ body {
 	background-color: #242424;
 	color: #fff !important;
 	padding: 10px;
+	transition: 0.3s ease all;
+}
+.h2-left .atm-info:hover {
+	background-color: #535453;
+	cursor: pointer;
+	transition: 0.3s ease all;
 }
 .h2-left .atm-info .title, .h2-left .atm-info .address {
 	width: 100%;
@@ -149,10 +164,6 @@ body {
 .h2-left .atm-info .address {
 	font-size: 0.8em;
 	color: #B1B3B1;
-}
-.h2-left .atm-info:hover {
-	background-color: #535453;
-	cursor: pointer;
 }
 .h2-left .atm-info .description {
 	padding-top: 15px;
@@ -184,11 +195,17 @@ body {
 	margin-left: -46px;
 }
 
-#map_wrapper {
-    height: 400px;
-}
 
+
+/* MAP */
+#map_wrapper {
+	height: 700px;
+}
 #map_canvas {
-    width: 100%;
-    height: 175%;
+	width: 100%;
+	height: 100%;
+}
+body {
+	font-family: 'Lato' !important;	
+}
 }

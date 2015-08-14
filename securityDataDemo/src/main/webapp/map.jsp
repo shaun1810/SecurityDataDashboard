@@ -358,9 +358,9 @@
                                             <span class="tickets">Tickets</span>
                                         </div>
                                         <div class="col-md-5 ticket-nav">
-                                        	<div class="ticket active"><i class="fa fa-circle"></i></div>
+                                        	<div class="ticket active"><i class="fa fa-circle"></i><span class="notification">3</span></div>
                                             <div class="ticket issue"><i class="fa fa-circle-thin"></i></div>
-                                            <div class="ticket warning"><i class="fa fa-bullseye"></i></div>
+                                            <div class="ticket warning"><i class="fa fa-bullseye"></i><span class="notification">5</span></div>
                                         </div>
                                     </div>
                                 </div>
