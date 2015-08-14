@@ -30,25 +30,20 @@ function initialize() {
     
     var infoWindowContent = [ 
         ['<div class="info_content">' +
-        '<h3>London Eye</h3>' +
-        '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'],
+        '<h3>ATM ID: 2783268 </h3>' +
+        '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
         ['<div class="info_content">' +
-        '<h3>Palace of Westminster</h3>' +
-        '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-        '<p><%out.print(eventID);%></p>' +
-        '</div>'],
+         '<h3>ATM ID: 3789246 </h3>' +
+         '<p>Location: Dundee <br> ATM Status: LOST COMMUNICATION</p>' + '</div>'],
         ['<div class="info_content">' +
-         '<h3>Royal Opera House</h3>' +
-         '<p>The Royal Opera House is an opera house and major performing arts venue in Covent Garden, central London.</p>' +
-         '</div>'],
+         '<h3>ATM ID: 7893727 </h3>' +
+         '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
          ['<div class="info_content">' +
-          '<h3>Palace of Westminster</h3>' +
-          '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-          '</div>'],
+          '<h3>ATM ID: 2537874 </h3>' +
+          '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
           ['<div class="info_content">' +
-           '<h3>Palace of Westminster</h3>' +
-           '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-           '</div>']
+           '<h3>ATM ID: 0983855 </h3>' +
+           '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
     ];
         
     // Display multiple markers on a map
