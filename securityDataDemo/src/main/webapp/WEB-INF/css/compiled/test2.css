@@ -208,4 +208,6 @@
 body {
 	font-family: 'Lato' !important;	
 }
+.cursor:hover {
+	cursor = pointer;
 }

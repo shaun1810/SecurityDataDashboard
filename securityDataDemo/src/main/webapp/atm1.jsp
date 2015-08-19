@@ -13,6 +13,17 @@ import = "java.util.*"
 %>
 
 <html>
+<head>
+<style type="text/css">
+	body {
+		font-family: 'Lato' !important;
+		
+	}
+	.result {
+		font-weight: 300;
+	}
+</style>
+</head>
 <body>
 
 
@@ -51,10 +62,10 @@ try
 	
 	%>
 <h2>ATM:<%out.print(computer); %></h2>
-<h3>Event ID: <%out.print(eventID);%></h3>	
-<h3>Problem: <%if(eventID.compareTo("2684616731") == 0){out.print("ATM Disconnected from network");} %></h3>
-<h3>Logged: <%out.print(logged);%></h3>
-<a href = "index.jsp">Home</a>
-<a href = "atm2.jsp">ATM 2</a>
+<h4>Event ID: <span class="result"><%out.print(eventID);%></span></h4>	
+<h4>Problem: <span class="result"><%if(eventID.compareTo("2684616731") == 0){out.print("ATM Disconnected from network");} %></span></h4>
+<h4>Logged: <span class="result"><%out.print(logged);%></span></h4>
+<!-- a href = "index.jsp">Home</a>
+<a href = "atm2.jsp">ATM 2</a-->
 </body>
 </html>
