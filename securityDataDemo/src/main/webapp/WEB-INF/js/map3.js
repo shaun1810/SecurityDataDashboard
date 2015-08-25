@@ -23,7 +23,12 @@ function initialize() {
         ['ATM 2, Dundee', 56.463285,-2.9731235],
         ['ATM 3, Dundee', 56.4612505,-2.9737877],
         ['ATM 4, Dundee', 56.4621971,-2.9661633],
-        ['ATM 5, Dundee', 56.4626629,-2.9840888]
+        ['ATM 5, Dundee', 56.4626629,-2.9840888],
+        ['ATM 6, Dundee', 56.4656217,-2.9868374],
+        ['ATM 7, Dundee', 56.4575219,-2.9860769],
+        ['ATM 8, Dundee', 56.4662291,-2.9607497],
+        ['ATM 9, Dundee', 56.471109,-2.9800962],
+        ['ATM 10, Dundee', 56.4695347,-2.9688852]
     ];
                         
     // Info Window Content
@@ -44,6 +49,21 @@ function initialize() {
           ['<div class="info_content">' +
            '<h3>ATM ID: 0983855 </h3>' +
            '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
+           ['<div class="info_content">' +
+            '<h3>ATM ID: 7893727 </h3>' +
+            '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
+            ['<div class="info_content">' +
+             '<h3>ATM ID: 2537874 </h3>' +
+             '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
+             ['<div class="info_content">' +
+              '<h3>ATM ID: 0983855 </h3>' +
+              '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
+              ['<div class="info_content">' +
+               '<h3>ATM ID: 2537874 </h3>' +
+               '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
+               ['<div class="info_content">' +
+                '<h3>ATM ID: 0983855 </h3>' +
+                '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
     ];
         
     // Display multiple markers on a map
@@ -101,6 +121,31 @@ function initialize() {
     $('#atm5').on('click', function(event) {
     	event.preventDefault();
     	map.panTo(new google.maps.LatLng(56.4626629,-2.9840888));
+    });
+    
+    $('#atm6').on('click', function(event) {
+    	event.preventDefault();
+    	map.panTo(new google.maps.LatLng(56.4656217,-2.9868374));
+    });
+    
+    $('#atm7').on('click', function(event) {
+    	event.preventDefault();
+    	map.panTo(new google.maps.LatLng(56.4575219,-2.9860769));
+    });
+    
+    $('#atm8').on('click', function(event) {
+    	event.preventDefault();
+    	map.panTo(new google.maps.LatLng(56.4662291,-2.9607497));
+    });
+    
+    $('#atm9').on('click', function(event) {
+    	event.preventDefault();
+    	map.panTo(new google.maps.LatLng(56.471109,-2.9800962));
+    });
+    
+    $('#atm10').on('click', function(event) {
+    	event.preventDefault();
+    	map.panTo(new google.maps.LatLng(56.4695347,-2.9688852));
     });
     
     $('#vidlink').on('click', function(event) {

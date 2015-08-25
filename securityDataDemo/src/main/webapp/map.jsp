@@ -1,3 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"
+import = "com.mongodb.DB"
+import = "com.mongodb.DBCollection"
+import = "com.mongodb.DBCursor"
+import = "com.mongodb.ServerAddress"
+import = "com.mongodb.DBObject"
+import = "com.mongodb.WriteConcern"
+import = "com.mongodb.MongoException"
+import = "com.mongodb.BasicDBObject"
+import = "com.mongodb.MongoClient"
+import = "java.util.Arrays"
+import = "java.util.*"
+%>
+
+<% int go = 5; %>
+
 <html>
 <head>
 	<meta charset="UTF-8" />
@@ -371,7 +387,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 352994M</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
+                                                        <span class="address">128 Reform Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
@@ -385,7 +401,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 352995M</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
+                                                        <span class="address">47 Bell Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>UA Lost Communication</span>
@@ -399,7 +415,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
+                                                        <span class="address">52 Barrack Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
@@ -413,7 +429,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 00456792</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
+                                                        <span class="address">317 Candle Lane<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="active"><i class="fa fa-circle"></i>Receipt Paper Low</span>
@@ -427,7 +443,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
+                                                        <span class="address"><% out.print(go); %><br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
@@ -437,11 +453,67 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm6" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 00456792</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
+                                                        <span class="address">188 Dudhope Terrace<br>Dundee</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="atm7" class="col-md-12 atm-info">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 27831245</span>
+                                                        <span class="address">513 Dow Street<br>Dundee</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="atm8" class="col-md-12 atm-info">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 00456792</span>
+                                                        <span class="address">128 Princes Street<br>Dundee</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="atm9" class="col-md-12 atm-info">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 27831245</span>
+                                                        <span class="address">17 Hill Street<br>Dundee</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="atm10" class="col-md-12 atm-info">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 00456792</span>
+                                                        <span class="address">33 Alexander Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
@@ -455,63 +527,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
-                                                    </div>
-                                                    <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
-                                                    </div>
-                                                    <div class="col-sm-2 ticket">
-                                                        <i class="fa fa-ticket"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 atm-info">
-                                                <div class="row">
-                                                    <div class="col-sm-5">
-                                                        <span class="title">ATM 00456792</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
-                                                    </div>
-                                                    <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
-                                                    </div>
-                                                    <div class="col-sm-2 ticket">
-                                                        <i class="fa fa-ticket"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 atm-info">
-                                                <div class="row">
-                                                    <div class="col-sm-5">
-                                                        <span class="title">ATM 27831245</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
-                                                    </div>
-                                                    <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
-                                                    </div>
-                                                    <div class="col-sm-2 ticket">
-                                                        <i class="fa fa-ticket"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 atm-info">
-                                                <div class="row">
-                                                    <div class="col-sm-5">
-                                                        <span class="title">ATM 00456792</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
-                                                    </div>
-                                                    <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
-                                                    </div>
-                                                    <div class="col-sm-2 ticket">
-                                                        <i class="fa fa-ticket"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 atm-info">
-                                                <div class="row">
-                                                    <div class="col-sm-5">
-                                                        <span class="title">ATM 27831245</span>
-                                                        <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
+                                                        <span class="address">222 Sutherland Place<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
