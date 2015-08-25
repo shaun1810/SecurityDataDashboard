@@ -10,9 +10,19 @@ import = "com.mongodb.BasicDBObject"
 import = "com.mongodb.MongoClient"
 import = "java.util.Arrays"
 import = "java.util.*"
+import = "java.io.File"
 %>
 
-<% int go = 5; %>
+<%!
+public int dirSweep() {
+	File folder = new File("/Users/rh185141/Documents/Test");
+	File[] listOfFiles = folder.listFiles();
+	int listSize = listOfFiles.length;
+	return listSize;
+}
+
+public int videoList = dirSweep();
+%>
 
 <html>
 <head>
@@ -370,7 +380,7 @@ import = "java.util.*"
                                 <div class="col-md-12 h2-title">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <span class="number">1,159</span>
+                                            <span id="testy" class="number"><% out.print(videoList); %></span>
                                             <span class="tickets">Tickets</span>
                                         </div>
                                         <div class="col-md-5 ticket-nav">
@@ -443,7 +453,7 @@ import = "java.util.*"
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
-                                                        <span class="address"><% out.print(go); %><br>Dundee</span>
+                                                        <span class="address">440 Douglas Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
@@ -702,6 +712,18 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<!-- theme scripts -->
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/scripts.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/pace.min.js"></script>
+	
+	<script language="javascript"> 
+
+	   var videoList_js="<%=videoList%>";
+	   alert(videoList_js); 
+	   
+	   $('#testy').on('click', function(event) {
+	    	event.preventDefault();
+	    	alert('go');
+	    });
+
+	</script> 
 	
 </body>
 </html>
