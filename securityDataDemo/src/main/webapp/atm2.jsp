@@ -53,8 +53,6 @@ try
 <h2>ATM:<%out.print(computer); %></h2>
 
 <h3>Event ID: <%if (cameraEvent != null){out.print(cameraEvent);} else {out.print("No Fraud detected!");}%></h3>	
-<a href = "index.jsp">Home</a>
-<a href = "atm2.jsp">ATM 2</a>
 </body>
 </html>
 <div id="CameraEvent"></div>
