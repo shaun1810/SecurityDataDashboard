@@ -14,6 +14,7 @@ import = "java.util.*"
 
 <html>
 <head>
+	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test2.css" type="text/css" />
 <style type="text/css">
 	body {
 		font-family: 'Lato' !important;
@@ -24,32 +25,21 @@ import = "java.util.*"
 	}
 </style>
 </head>
-<body>
-
-
 <% 
 MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
 BasicDBObject query = new BasicDBObject("Event", "Camera Covered");
 DBCursor cursor = collection.find(query);
-String eventID = null;
-String logName = null;
-String source = null;
-String level = null;
-String user = null;
-String logged = null;
-String taskCat = null;
-String computer = null;
-String message = null;
-
+String cameraEvent = null; 
+String computer = "NCR-3459kj";
 
 try
 {
 	while (cursor.hasNext())
 	{
 		DBObject data = cursor.next();
-		eventID = data.get("Event").toString();
+		cameraEvent = data.get("Event").toString();
 		
 
 	}
@@ -59,18 +49,17 @@ try
 	}
 	
 	%>
+	<%response.addHeader("Refresh", "5"); %>
 <h2>ATM:<%out.print(computer); %></h2>
 
-<h3>Event ID: <%out.print(eventID);%></h3>	
+<h3>Event ID: <%out.print(cameraEvent);%></h3>	
 <a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a>
 </body>
 </html>
+<div id="CameraEvent"></div>
 
 
-<h4>Event ID: <span class="result"><%out.print(eventID);%></span></h4>	
-<h4>Problem: <span class="result"><%if(eventID.compareTo("3221232506") == 0){out.print("UA terminated prematurely");} %></span></h4>
-<h4>Logged: <span class="result"><%out.print(logged);%></span></h4>
 <!-- a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a-->
 </body>

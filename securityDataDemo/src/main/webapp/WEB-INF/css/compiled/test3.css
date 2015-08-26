@@ -213,7 +213,9 @@ body {
 }
 
 #extCam {
-	background-color: red;
-	height: 50px;
-	width: 50px;
+	border: 1px solid red;
+	height: 100px;
+	width: 100px;
+	float: right;
+	margin-right: 20px;
 }

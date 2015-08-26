@@ -14,24 +14,32 @@ import = "java.io.File"
 import = "org.apache.commons.net.ftp.*"
 %>
 
-<%!
-public int dirSweep() {
-	
-	//FTPClient f = new FTPClient();
-	//f.connect("ftp://192.168.1.113");
-	//f.login(username, password);
-	//FTPFile[] files = f.listFiles("ftp://192.168.1.113/BackofATM/");
-	//int listSize = files.length;
-	return 0;
-	
-	//File folder = new File("ftp://192.168.1.113/BackofATM");
-	//File[] listOfFiles = folder.listFiles();
-	//int listSize = listOfFiles.length;
-	//return listSize;
-}
 
-public int videoList = dirSweep();
+
+<% 
+MongoClient mongo = new MongoClient("192.168.1.113", 27017);
+DB db = mongo.getDB("WL");
+DBCollection collection = db.getCollection("testCol");
+BasicDBObject query = new BasicDBObject("Event", "Camera Covered");
+DBCursor cursor = collection.find(query);
+String cameraEvent = null; 
+String computer = "NCR-3459kj";
+
+try
+{
+	while (cursor.hasNext())
+	{
+		DBObject data = cursor.next();
+		cameraEvent = data.get("Event").toString();
+		
+
+	}
+	}
+	finally {
+		cursor.close();
+	}
 %>
+
 
 <html>
 <head>
@@ -64,7 +72,7 @@ public int videoList = dirSweep();
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/morris.css" type="text/css" />
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/daterangepicker.css" type="text/css" />
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/jquery-jvectormap-1.2.2.css" type="text/css" />
-	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test2.css" type="text/css" />
+	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test3.css" type="text/css" />
 	
 	<!-- Favicon -->
 	<link type="image/x-icon" href="/securityDataDemo/src/main/webapp/WEB-INF/favicon.png" rel="shortcut icon" />
@@ -387,16 +395,19 @@ public int videoList = dirSweep();
 						
 							<div class="row">
                                 <div class="col-md-12 h2-title">
-                                    <div class="row">
+                                    <div id="testy2" class="row">
                                         <div class="col-md-3">
-                                            <span id="testy" class="number"><% out.print(videoList); %></span>
+                                            <span id="testy" class="number">1736</span>
                                             <span class="tickets">Tickets</span>
                                         </div>
                                         <div class="col-md-5 ticket-nav">
                                         	<div class="ticket active"><i class="fa fa-circle"></i><span class="notification">3</span></div>
                                             <div class="ticket issue"><i class="fa fa-circle-thin"></i></div>
                                             <div class="ticket warning"><i class="fa fa-bullseye"></i><span class="notification">5</span></div>
-                                        </div> 
+                                        </div>
+                                        <div id="extCam">
+                                        	<iframe src="atm2.jsp" frameborder="0" height="230"></iframe>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12 h2-content">
@@ -723,16 +734,18 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/pace.min.js"></script>
 	
 	<script language="javascript"> 
-
-	   var videoList_js="<%=videoList%>";
-	   alert(videoList_js); 
-	   
-	   $('#testy').on('click', function(event) {
-	    	event.preventDefault();
-	    	alert('go');
-	    });
-
-	</script> 
+	
+	
+	setInterval(function() {
+		var videoList_js= "<%=cameraEvent%>";
+		if (videoList_js != "null")
+		{
+			//$('#testy2').css("background-color", "red");
+		}
+	}, 100/30);
+	
+	
+	 </script> 
 	
 </body>
 </html>
