@@ -30,22 +30,11 @@ function initialize() {
     
     var infoWindowContent = [ 
         ['<div class="info_content">' +
-        '<h3>ATM ID: 2783268 </h3>' +
-        '<p>Location: Dundee <br> ATM Status: Cash Low <br> <a href="http://192.168.1.123:3700/interface">Video</a></p>' + '</div>'],
+        '<!--h3>ATM ID: 2783268 </h3-->' +
+        '<!--p>Location: Dundee <br> ATM Status: Cash Low <br> <a class="cursor" data-toggle="modal" data-target="#video">Request Video</a></p--><iframe src="atm1.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
         ['<div class="info_content">' +
-<<<<<<< HEAD
-        '<h3>Palace of Westminster</h3>' +
-        '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-        '<p><%out.print(eventID);%></p>'
-        + '</div>']+
-        ['<div class="info_content">' +
-         '<h3>Royal Opera House</h3>' +
-         '<p>The Royal Opera House is an opera house and major performing arts venue in Covent Garden, central London.</p>' +
-         '</div>']
-
-=======
-         '<h3>ATM ID: 3789246 </h3>' +
-         '<p>Location: Dundee <br> ATM Status: LOST COMMUNICATION</p>' + '</div>'],
+         '<!--h3>ATM ID: 3789246 </h3-->' +
+         '<!--p>Location: Dundee <br> ATM Status: LOST COMMUNICATION</p--><iframe src="atm2.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
         ['<div class="info_content">' +
          '<h3>ATM ID: 7893727 </h3>' +
          '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
@@ -55,7 +44,6 @@ function initialize() {
           ['<div class="info_content">' +
            '<h3>ATM ID: 0983855 </h3>' +
            '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
->>>>>>> origin/master
     ];
         
     // Display multiple markers on a map

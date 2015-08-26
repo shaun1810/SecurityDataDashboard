@@ -13,14 +13,25 @@ import = "java.util.*"
 %>
 
 <html>
+<head>
+<style type="text/css">
+	body {
+		font-family: 'Lato' !important;
+		
+	}
+	.result {
+		font-weight: 300;
+	}
+</style>
+</head>
 <body>
 
 
 <% 
-MongoClient mongo = new MongoClient("10.93.68.125", 27017);
+MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
-BasicDBObject query = new BasicDBObject("Event ID", "3221232506");
+BasicDBObject query = new BasicDBObject("Event", "Camera Covered");
 DBCursor cursor = collection.find(query);
 String eventID = null;
 String logName = null;
@@ -38,10 +49,8 @@ try
 	while (cursor.hasNext())
 	{
 		DBObject data = cursor.next();
-		eventID = data.get("Event ID").toString();
-		computer = data.get("Computer").toString();
-		logName = data.get("Log Name").toString();
-		logged = data.get("Logged").toString();
+		eventID = data.get("Event").toString();
+		
 
 	}
 	}
@@ -51,11 +60,19 @@ try
 	
 	%>
 <h2>ATM:<%out.print(computer); %></h2>
+
 <h3>Event ID: <%out.print(eventID);%></h3>	
-<h3>Problem: <%if(eventID.compareTo("3221232506") == 0){out.print("UA terminated prematurely");} %></h3>
-<h3>Logged: <%out.print(logged);%></h3>
 <a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a>
+</body>
+</html>
+
+
+<h4>Event ID: <span class="result"><%out.print(eventID);%></span></h4>	
+<h4>Problem: <span class="result"><%if(eventID.compareTo("3221232506") == 0){out.print("UA terminated prematurely");} %></span></h4>
+<h4>Logged: <span class="result"><%out.print(logged);%></span></h4>
+<!-- a href = "index.jsp">Home</a>
+<a href = "atm2.jsp">ATM 2</a-->
 </body>
 </html>
 

@@ -72,13 +72,13 @@
 									</a>
 									<ul class="submenu">
 										<li class="active">
-											<a href="index.html">
+											<a href="index.jsp">
 												Index
 											</a>
 										</li>
 										<li>
-											<a href="#">
-												Profile
+											<a href="http://192.168.1.123:3700/interface">
+												Video
 											</a>
 										</li>
 										<li>
@@ -358,10 +358,10 @@
                                             <span class="tickets">Tickets</span>
                                         </div>
                                         <div class="col-md-5 ticket-nav">
-                                        	<div class="ticket active"><i class="fa fa-circle"></i></div>
+                                        	<div class="ticket active"><i class="fa fa-circle"></i><span class="notification">3</span></div>
                                             <div class="ticket issue"><i class="fa fa-circle-thin"></i></div>
-                                            <div class="ticket warning"><i class="fa fa-bullseye"></i></div>
-                                        </div>
+                                            <div class="ticket warning"><i class="fa fa-bullseye"></i><span class="notification">5</span></div>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="col-md-12 h2-content">
@@ -370,22 +370,8 @@
                                             <div id="atm1" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
-                                                        <span class="title">ATM 27831245</span>
+                                                        <span class="title">ATM 352994M</span>
                                                         <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
-                                                    </div>
-                                                    <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
-                                                    </div>
-                                                    <div class="col-sm-2 ticket">
-                                                        <i class="fa fa-ticket"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 atm-info">
-                                                <div class="row">
-                                                    <div class="col-sm-5">
-                                                        <span class="title">ATM 00456792</span>
-                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
                                                         <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
@@ -395,7 +381,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm2" class="col-md-12 atm-info">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 352995M</span>
+                                                        <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="warning"><i class="fa fa-bullseye"></i>UA Lost Communication</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="atm3" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
@@ -409,7 +409,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm4" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 00456792</span>
@@ -423,7 +423,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 atm-info">
+                                            <div id="atm5" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
@@ -605,6 +605,15 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
                                          <div id="map_wrapper">
 										    <div id="map_canvas" class="mapping"></div>
 										</div>
+										<div>
+											<a href="http://192.168.1.123:3700/interface">
+												Video
+											</a>
+											
+											<a href="index.jsp">
+												Index
+											</a>
+										</div>
                                         </div>
                                         
                                     </div>
@@ -616,6 +625,24 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 				</div>
 				
 			</section>
+			
+			<!-- Modal -->
+<div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">AXIS IP Camera</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="http://192.168.1.123:3700/interface" class="video" width="500" height="300" frameborder="0"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 		</div>
@@ -628,7 +655,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/bootstrap.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.nanoscroller.min.js"></script>
-	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map.js"></script>
+	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map3.js"></script>
 	
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/demo.js"></script> <!-- only for demo -->
 	

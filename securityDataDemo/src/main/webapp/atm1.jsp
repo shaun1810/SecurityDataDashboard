@@ -13,16 +13,32 @@ import = "java.util.*"
 %>
 
 <html>
+<head>
+<style type="text/css">
+	body {
+		font-family: 'Lato' !important;
+		
+	}
+	.result {
+		font-weight: 300;
+	}
+</style>
+</head>
 <body>
 
 
 <% 
-MongoClient mongo = new MongoClient("10.93.68.125", 27017);
+MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
-BasicDBObject query = new BasicDBObject("Event ID", "2684616731");
+BasicDBObject query = new BasicDBObject("Computer" , "NCR-352994MJ009");
 DBCursor cursor = collection.find(query);
 String eventID = null;
+Boolean atmDis = false;
+Boolean usbIns = false;
+Boolean admin = false;
+Boolean uaDis = false;
+Boolean unexpectedReboot = false;
 String logName = null;
 String source = null;
 String level = null;
@@ -38,10 +54,32 @@ try
 	while (cursor.hasNext())
 	{
 		DBObject data = cursor.next();
-		eventID = data.get("Event ID").toString();
 		computer = data.get("Computer").toString();
-		logName = data.get("Log Name").toString();
 		logged = data.get("Logged").toString();
+			if (cursor != null)
+			{
+				BasicDBObject atmEventIDQue = new BasicDBObject("Event ID", "2684616731");
+				BasicDBOBject usbIns = new BasicDBObject("Event ID", "");
+				DBCursor cursor2 = collection.find(eventIDQue);
+				DBCursor cursor3 = collection.find()
+					while (cursor2.hasNext())
+					{
+						DBObject data2 = cursor2.next();
+						if (cursor2 != null)
+						{
+							atmDis = true;
+							
+						}
+						else
+						{
+							atmDis = false;
+						}
+						
+					}
+					
+					
+				
+			}
 
 	}
 	}
@@ -50,11 +88,10 @@ try
 	}
 	
 	%>
-<h2>ATM:<%out.print(computer); %></h2>
-<h3>Event ID: <%out.print(eventID);%></h3>	
-<h3>Problem: <%if(eventID.compareTo("2684616731") == 0){out.print("ATM Disconnected from network");} %></h3>
-<h3>Logged: <%out.print(logged);%></h3>
-<a href = "index.jsp">Home</a>
-<a href = "atm2.jsp">ATM 2</a>
+<h2>ATM: <span class = "result"><%out.print(computer); %></span></h2>
+<h4>Issues: <span class="result"><%if (atmDis == true) {out.print("ATM Disconnected from the network!");}%></span></h4>	
+<h4>Logged: <span class="result"><%out.print(logged);%></span></h4>
+<!-- a href = "index.jsp">Home</a>
+<a href = "atm2.jsp">ATM 2</a-->
 </body>
 </html>
