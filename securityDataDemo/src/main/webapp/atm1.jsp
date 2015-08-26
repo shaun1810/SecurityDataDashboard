@@ -31,12 +31,13 @@ import = "java.util.*"
 MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
-//BasicDBObject query = new BasicDBObject("Computer" , "NCR-352994MJ009");
-//DBCursor cursor = collection.find(query);
-BasicDBObject query2 = new BasicDBObject("Event ID", "2684616731");
-DBCursor cursor2 = collection.find(query2);
-String eventIDno = null;
-Boolean atmDis = false;
+BasicDBObject query = new BasicDBObject("Computer" , "NCR-352994MJ009");
+DBCursor cursor = collection.find(query);
+//BasicDBObject query2 = new BasicDBObject("Event ID", "3221232506");
+//DBCursor cursor2 = collection.find(query2);
+String uaDisconnected = null;
+String atmDis = null;
+//Boolean atmDis = false;
 Boolean usbIns = false;
 Boolean admin = false;
 Boolean uaDis = false;
@@ -53,13 +54,23 @@ String message = null;
 
 try
 {
-	while (cursor2.hasNext())
+	while (cursor.hasNext())
 	{
-		DBObject data = cursor2.next();
+		DBObject data = cursor.next();
 		
 		computer = data.get("Computer").toString();
-		logged = data.get("Logged").toString();
-		eventIDno = data.get("Event ID").toString();
+		
+		if (data.get("Event ID").toString() == "3221232506");
+		{
+			uaDisconnected = "3221232506";
+			logged = data.get("Logged").toString();
+		}
+		if(data.get("Event ID").toString() == "2684616731");
+		{
+			atmDis = "2684616731";
+			logged = data.get("Logged").toString();
+		}
+		
 			
 				//while (cursor2.hasNext())
 				//{
@@ -70,14 +81,15 @@ try
 	}
 }
 	finally {
-		cursor2.close();
+		cursor.close();
 		//cursor2.close();
 	}
 response.addHeader("Refresh", "5");
 	%>
 
-<h2>ATM: <span class = "result">ATM 1</span></h2>
-<h4>Issues: <span class="result"><%if (eventIDno != null) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
+<h2>ATM: <span class = "result"><%out.print(computer);%></span></h2>
+<h4>Issues: <span class="result"><%if (uaDisconnected != null) {out.print("UA terminated prematurely!");} else{out.print("Status good!");}%></span></h4> 
+<h4>Issues: <span class="result"><%if (atmDis != null) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
 <h4>Logged: <span class="result"><%if (logged != null) {out.print(logged);} else{out.print(" ");}%></span></h4>
 <!-- a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a-->
