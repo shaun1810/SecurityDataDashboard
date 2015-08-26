@@ -34,5 +34,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="target/securityDataDemo/WEB-INF/mongo-java-driver-2.12.3.jar"/>
+	<classpathentry kind="lib" path="commons-net-3.3.jar"/>
+	<classpathentry kind="lib" path="commons-net-3.3-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

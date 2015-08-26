@@ -11,14 +11,23 @@ import = "com.mongodb.MongoClient"
 import = "java.util.Arrays"
 import = "java.util.*"
 import = "java.io.File"
+import = "org.apache.commons.net.ftp.*"
 %>
 
 <%!
 public int dirSweep() {
-	File folder = new File("/Users/rh185141/Documents/Test");
-	File[] listOfFiles = folder.listFiles();
-	int listSize = listOfFiles.length;
-	return listSize;
+	
+	//FTPClient f = new FTPClient();
+	//f.connect("ftp://192.168.1.113");
+	//f.login(username, password);
+	//FTPFile[] files = f.listFiles("ftp://192.168.1.113/BackofATM/");
+	//int listSize = files.length;
+	return 0;
+	
+	//File folder = new File("ftp://192.168.1.113/BackofATM");
+	//File[] listOfFiles = folder.listFiles();
+	//int listSize = listOfFiles.length;
+	//return listSize;
 }
 
 public int videoList = dirSweep();
@@ -681,7 +690,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/bootstrap.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.nanoscroller.min.js"></script>
-	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map3.js"></script>
+	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map4.js"></script>
 	
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/demo.js"></script> <!-- only for demo -->
 	
