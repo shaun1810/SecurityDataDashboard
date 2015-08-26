@@ -35,13 +35,13 @@ function initialize() {
     var infoWindowContent = [ 
         ['<div class="info_content">' +
         '<!--h3>ATM ID: 2783268 </h3-->' +
-        '<!--p>Location: Dundee <br> ATM Status: Cash Low <br> <a class="cursor" data-toggle="modal" data-target="#video">Request Video</a></p--><iframe src="atm1.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
+        '<!--p>Location: Dundee <br> ATM Status: Cash Low <br> <a class="cursor" data-toggle="modal" data-target="#video">Request Video</a></p--><iframe src="atm1.jsp/" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
         ['<div class="info_content">' +
          '<!--h3>ATM ID: 3789246 </h3-->' +
          '<!--p>Location: Dundee <br> ATM Status: LOST COMMUNICATION</p--><iframe src="atm2.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
         ['<div class="info_content">' +
          '<h3>ATM ID: 7893727 </h3>' +
-         '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
+         '<!--p>Location: Dundee <br> ATM Status: Cash Low <br> <a class="cursor" data-toggle="modal" data-target="#video">Request Video</a></p--><iframe src="ftp://192.168.1.113/BackofATM/" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
          ['<div class="info_content">' +
           '<h3>ATM ID: 2537874 </h3>' +
           '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
