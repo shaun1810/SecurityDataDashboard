@@ -15,13 +15,26 @@ import = "java.util.*"
 <html>
 <head>
 	<link rel="stylesheet" href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test2.css" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <style type="text/css">
 	body {
 		font-family: 'Lato' !important;
+		color: #fff;
 		
 	}
 	.result {
 		font-weight: 300;
+	}
+	.green {
+		color: #4CBB36;
+		visibility: visible;
+	}
+	.red {
+		color: #FF7A75;
+		visibility: hidden;
+	}
+	h1 {
+		font-size: 3em;
 	}
 </style>
 </head>
@@ -49,19 +62,29 @@ try
 	}
 	
 	%>
-	<%response.addHeader("Refresh", "5"); %>
-<h2>ATM:<%out.print(computer); %></h2>
+	<%response.addHeader("Refresh", "2"); %>
+<h1><i class="fa fa-check-circle-o green" id="green"></i><i class="fa fa-circle red" id="red"></i></h1>
+<!-- h2>ATM:<%out.print(computer); %></h2-->
 
-<h3>Event ID: <%if (cameraEvent != null){out.print(cameraEvent);} else {out.print("No Fraud detected!");}%></h3>	
-<a href = "index.jsp">Home</a>
-<a href = "atm2.jsp">ATM 2</a>
+<h3></h3>	
 </body>
 </html>
 <div id="CameraEvent"></div>
-
-
-<!-- a href = "index.jsp">Home</a>
-<a href = "atm2.jsp">ATM 2</a-->
+<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
+<script language="javascript"> 
+	
+	
+		var videoList_js= "<%=cameraEvent%>";
+		if (videoList_js != "null")
+		{
+			$('#green').css("visibility", "hidden");
+			$('#red').css("visibility", "visible");
+		} else {
+			$('#green').css("visibility", "visible");
+			$('#red').css("visibility", "hidden");
+		}
+	
+	
+	 </script> 
 </body>
 </html>
-

@@ -213,8 +213,7 @@ body {
 }
 
 #extCam {
-	border: 1px solid red;
-	height: 100px;
+	height: 50px;
 	width: 100px;
 	float: right;
 	margin-right: 20px;

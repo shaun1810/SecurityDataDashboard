@@ -406,7 +406,7 @@ try
                                             <div class="ticket warning"><i class="fa fa-bullseye"></i><span class="notification">5</span></div>
                                         </div>
                                         <div id="extCam">
-                                        	<iframe src="atm2.jsp" frameborder="0" height="230"></iframe>
+                                        	<iframe src="notification1.jsp" frameborder="0" height="230"></iframe>
                                         </div>
                                     </div>
                                 </div>
