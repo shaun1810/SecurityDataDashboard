@@ -413,6 +413,20 @@ try
                                 <div class="col-md-12 h2-content">
                                     <div class="row">
                                         <div class="col-md-6 h2-left">
+                                        	<div id="atm3" class="col-md-12 atm-info aft-not">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <span class="title">ATM 27831245</span>
+                                                        <span class="address">52 Barrack Street<br>Dundee</span>
+                                                    </div>
+                                                    <div class="col-sm-5 description">
+                                                        <span class="warning"><i class="fa fa-bullseye"></i>Camera Covered</span>
+                                                    </div>
+                                                    <div class="col-sm-2 ticket">
+                                                        <i class="fa fa-ticket"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div id="atm1" class="col-md-12 atm-info">
                                                 <div class="row">
                                                     <div class="col-sm-5">
@@ -441,7 +455,7 @@ try
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div id="atm3" class="col-md-12 atm-info">
+                                            <div id="atm3" class="col-md-12 atm-info bef-not">
                                                 <div class="row">
                                                     <div class="col-sm-5">
                                                         <span class="title">ATM 27831245</span>
@@ -681,7 +695,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
         <h4 class="modal-title" id="myModalLabel">AXIS IP Camera</h4>
       </div>
       <div class="modal-body">
-        <iframe src="http://192.168.1.123:3700/interface" class="video" width="500" height="300" frameborder="0"></iframe>
+        <iframe src="http://192.168.1.118:3700/interface" class="video" width="500" height="300" frameborder="0"></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -735,14 +749,19 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	
 	<script language="javascript"> 
 	
+	setInterval(function(){
+		
+	var videoList_js= "<%=cameraEvent%>";
+	if (videoList_js != "null")
+	{
+		$('.bef-not').css("display", "none");
+		$('.aft-not').css("display", "block");
+	} else {
+		$('.bef-not').css("display", "block");
+		$('.aft-not').css("display", "none");
+	}
 	
-	setInterval(function() {
-		var videoList_js= "<%=cameraEvent%>";
-		if (videoList_js != "null")
-		{
-			//$('#testy2').css("background-color", "red");
-		}
-	}, 100/30);
+	}, 3000);
 	
 	
 	 </script> 
