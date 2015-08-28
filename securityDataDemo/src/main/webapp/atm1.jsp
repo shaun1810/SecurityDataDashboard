@@ -49,6 +49,8 @@ String logged = null;
 String taskCat = null;
 String computer = null;
 String message = null;
+String camera1 = null;
+String camera2 = null;
 
 
 try
@@ -75,6 +77,18 @@ try
 			logged = data.get("Logged").toString();
 		}
 		
+		if(data.get("Event") == "Camera Covered");
+		{
+			camera1 = "Camera Covered";
+			
+		}
+		
+		if(data.get("Event") == "Back of ATM");
+		{
+			camera2 = "Back of ATM";
+		}
+		
+		//if (data.get("")
 			
 				//while (cursor2.hasNext())
 				//{
@@ -95,6 +109,8 @@ response.addHeader("Refresh", "5");
 <h4>UA status: <span class="result"><%if (uaDisconnected != null) {out.print("UA terminated prematurely!");} else{out.print("Status good!");}%></span></h4> 
 <h4>ATM status: <span class="result"><%if (atmDis != null) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
 <h4>Issues: <span class="result"><%if (atmDis != null) {out.print("USB Illegally Inserted!");} else{out.print(" ");}%></span></h4> 
+<h4>Issues: <span class="result"><%if (camera1 != null) {out.print("ATM camera Covered up!");} else{out.print(" ");}%></span></h4>
+<h4>Issues: <span class="result"><%if (camera2 != null) {out.print("Intruder behind ATM!");} else{out.print(" ");}%></span></h4>
 <h4>Logged: <span class="result"><%if (logged != null) {out.print(logged);} else{out.print(" ");}%></span></h4>
 <!-- a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a-->
