@@ -72,8 +72,7 @@ try
 <div id="CameraEvent"></div>
 <script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
 <script language="javascript"> 
-	
-	
+				
 		var videoList_js= "<%=cameraEvent%>";
 		if (videoList_js != "null")
 		{

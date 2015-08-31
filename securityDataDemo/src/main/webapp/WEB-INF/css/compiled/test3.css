@@ -221,4 +221,21 @@ body {
 
 .aft-not {
 	display: none;
+	border: 3px solid #FF7A75;
+	-webkit-animation-name: pulseBorder;
+  	-webkit-animation-iteration-count: infinite;
+  	-webkit-animation-timing-function: ease;
+  	-webkit-animation-direction: alternate;
+  	-webkit-animation-duration: 0.5s;
+}
+
+
+@-webkit-keyframes pulseBorder {
+  from {
+    border: 3px solid #FF7A75;
+  }
+  to {
+    border: 3px solid transparent;
+        
+  }
 }

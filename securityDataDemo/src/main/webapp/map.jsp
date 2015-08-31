@@ -16,7 +16,8 @@ import = "org.apache.commons.net.ftp.*"
 
 
 
-<% 
+<%
+
 MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
@@ -35,6 +36,7 @@ try
 
 	}
 	}
+
 	finally {
 		cursor.close();
 	}
@@ -434,7 +436,7 @@ try
                                                         <span class="address">128 Reform Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -448,7 +450,7 @@ try
                                                         <span class="address">47 Bell Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>UA Lost Communication</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -462,7 +464,7 @@ try
                                                         <span class="address">52 Barrack Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -476,7 +478,7 @@ try
                                                         <span class="address">317 Candle Lane<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Receipt Paper Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -490,7 +492,7 @@ try
                                                         <span class="address">440 Douglas Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -504,7 +506,7 @@ try
                                                         <span class="address">188 Dudhope Terrace<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -518,7 +520,7 @@ try
                                                         <span class="address">513 Dow Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -532,7 +534,7 @@ try
                                                         <span class="address">128 Princes Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -546,7 +548,7 @@ try
                                                         <span class="address">17 Hill Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -560,7 +562,7 @@ try
                                                         <span class="address">33 Alexander Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -574,7 +576,7 @@ try
                                                         <span class="address">222 Sutherland Place<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -588,7 +590,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Receipt Paper Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -602,7 +604,7 @@ try
                                                         <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -616,7 +618,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -630,7 +632,7 @@ try
                                                         <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -644,7 +646,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -750,7 +752,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script language="javascript"> 
 	
 	setInterval(function(){
-		
+
 	var videoList_js= "<%=cameraEvent%>";
 	if (videoList_js != "null")
 	{
