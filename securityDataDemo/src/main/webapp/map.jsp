@@ -635,8 +635,8 @@ cameraEvent = "cameraCovered";
 		var map;
 		function initMap() {
 			map = new google.maps.Map(document.getElementById('map'), {
-				center: {lat: 56.465979, lng: -2.970723},
-				zoom: 26
+				center: {lat: 56.463285, lng: -2.9731235},
+				zoom: 14
 			});
 			
 			setMarkers(map);
@@ -657,6 +657,8 @@ cameraEvent = "cameraCovered";
 			$('.aft-not').css("-webkit-animation-name", "zero");
 			$('.aft-not').css("border", "3px solid transparent");
 			$('.reset').css("display", "none");
+			$('.bef-not').css("display", "block");
+			$('.aft-not').css("display", "none");
 			ATMs[1][3] = 0;
 			initMap();
 		});
@@ -722,7 +724,6 @@ cameraEvent = "cameraCovered";
 				this.setZoom(14);
 				google.maps.event.removeListener(boundsListener);
 			});
-			
 			$('#atm1').on('click', function(event) {
 				event.preventDefault();
 				map.panTo(new google.maps.LatLng(56.4611962,-2.9706048));
@@ -772,20 +773,19 @@ cameraEvent = "cameraCovered";
 
 	<script language="javascript"> 
 	
-	setInterval(function(){
-
+	var refreshIntervalId = setInterval(function(){
 	var videoList_js= "<%=cameraEvent%>";
 	if (videoList_js != "null")
 	{
 		atm2 = 2;
 		$('.bef-not').css("display", "none");
 		$('.aft-not').css("display", "block");
+		clearInterval(refreshIntervalId);
 	} else {
 		atm2 = 0;
 		$('.bef-not').css("display", "block");
 		$('.aft-not').css("display", "none");
 	}
-	
 	}, 3000);
 	
 	
