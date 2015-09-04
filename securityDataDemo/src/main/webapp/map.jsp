@@ -16,7 +16,8 @@ import = "org.apache.commons.net.ftp.*"
 
 
 
-<% 
+<%
+
 MongoClient mongo = new MongoClient("192.168.1.113", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
@@ -30,11 +31,11 @@ try
 	while (cursor.hasNext())
 	{
 		DBObject data = cursor.next();
-		cameraEvent = data.get("Event").toString();
-		
+		cameraEvent = data.get("Event").toString();		
 
 	}
 	}
+
 	finally {
 		cursor.close();
 	}
@@ -84,6 +85,13 @@ try
 		<script src="assets/js/html5shiv.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+	
+	<style>
+	#map {
+		height: 700px;
+	}
+	</style>
+	
 </head>
 <body>
 	<div id="theme-wrapper">
@@ -434,7 +442,7 @@ try
                                                         <span class="address">128 Reform Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -448,7 +456,7 @@ try
                                                         <span class="address">47 Bell Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>UA Lost Communication</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -462,7 +470,7 @@ try
                                                         <span class="address">52 Barrack Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -476,7 +484,7 @@ try
                                                         <span class="address">317 Candle Lane<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Receipt Paper Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -490,7 +498,7 @@ try
                                                         <span class="address">440 Douglas Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -504,7 +512,7 @@ try
                                                         <span class="address">188 Dudhope Terrace<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -518,7 +526,7 @@ try
                                                         <span class="address">513 Dow Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -532,7 +540,7 @@ try
                                                         <span class="address">128 Princes Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -546,7 +554,7 @@ try
                                                         <span class="address">17 Hill Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -560,7 +568,7 @@ try
                                                         <span class="address">33 Alexander Street<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -574,7 +582,7 @@ try
                                                         <span class="address">222 Sutherland Place<br>Dundee</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -588,7 +596,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Receipt Paper Low</span>
+                                                       <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -602,7 +610,7 @@ try
                                                         <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Maintenance</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -616,7 +624,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="warning"><i class="fa fa-bullseye"></i>Lost Communication</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -630,7 +638,7 @@ try
                                                         <span class="address">1200 Freemont Blvd<br>Charlotte, VA 25798</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -644,7 +652,7 @@ try
                                                         <span class="address">3278 Broadway Ave, Suite 100<br>Charlotte, VA 25791</span>
                                                     </div>
                                                     <div class="col-sm-5 description">
-                                                        <span class="active"><i class="fa fa-circle"></i>Cash Low</span>
+                                                        <span class="active"><i class="fa fa-circle"></i>Operational</span>
                                                     </div>
                                                     <div class="col-sm-2 ticket">
                                                         <i class="fa fa-ticket"></i>
@@ -655,25 +663,7 @@ try
                                        
                                         
                                         <div class="col-md-6 h2-right">
-                                        
-                                        <!--
-                                            <iframe width="100%" height="700" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Dundee%2C%20United%20Kingdom&key=AIzaSyDTvXIySHIZrS6lsoLjjg0SLRKzlSuQ5PU" allowfullscreen></iframe>
-                                        
-                                         --> 
-                                         
-                                         <div id="map_wrapper">
-										    <div id="map_canvas" class="mapping"></div>
-										</div>
-										<div>
-											<a href="http://192.168.1.123:3700/interface">
-												Video
-											</a>
-											
-											<a href="index.jsp">
-												Index
-											</a>
-										</div>
+											<div id="map"></div>
                                         </div>
                                         
                                     </div>
@@ -715,7 +705,7 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/bootstrap.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.nanoscroller.min.js"></script>
-	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map4.js"></script>
+	<!-- script src="/securityDataDemo/src/main/webapp/WEB-INF/js/map4.js"></script-->
 	
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/demo.js"></script> <!-- only for demo -->
 	
@@ -747,16 +737,145 @@ src="https://www.google.com/maps/embed/v1/place?q=NCR%2C%20Fulton%20Road%2C%20Du
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/scripts.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/pace.min.js"></script>
 	
+	<!-- Google Maps Settings -->
+	<script>
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: 56.465979, lng: -2.970723},
+				zoom: 14
+			});
+			
+			setMarkers(map);
+		}
+		
+		// List of ATMs on map
+		var atm2;
+		var videoList_js2= "<%=cameraEvent%>";
+		if (videoList_js2 != "null") {
+			atm2 = 2;
+		} else {
+			atm2 = 0;
+		}
+		var ATMs = [
+			['ATM 1', 56.4611962, -2.9706048, 0],
+			['ATM 2', 56.463285, -2.9731235, atm2],
+			['ATM 3', 56.4612505, -2.9737877, 0],
+			['ATM 4', 56.4621971, -2.9661633, 0],
+			['ATM 5', 56.4626629, -2.9840888, 0],
+			['ATM 6', 56.4656217, -2.9868374, 0],
+			['ATM 7', 56.4575219, -2.9860769, 0],
+			['ATM 8', 56.4662291, -2.9607497, 0],
+			['ATM 9', 56.471109, -2.9800962, 0],
+			['ATM 10', 56.4695347, -2.9688852, 0]
+		];
+		
+		// List of ATM info messages
+		var infoWindowContent = [
+			['<div class="info_content">' + '<iframe src="atm1.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
+			['<div class="info_content">' + '<iframe src="atm2.jsp" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 7893727 </h3>' + '<iframe src="ftp://192.168.1.113/BackofATM/" frameborder="0" height="230"></iframe><br><a class="cursor" data-toggle="modal" data-target="#video">Request Video</a>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 2537874 </h3>' + '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 0983855 </h3>' + '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 7893727 </h3>' + '<p>Location: Dundee <br> ATM Status: Cash Low</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 2537874 </h3>' + '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 0983855 </h3>' + '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 2537874 </h3>' + '<p>Location: Dundee <br> ATM Status: Receipt Paper Low</p>' + '</div>'],
+			['<div class="info_content">' + '<h3>ATM ID: 0983855 </h3>' + '<p>Location: Dundee <br> ATM Status: Maintenance Required</p>' + '</div>']
+		];
+		
+		// List of marker images
+		var images = [
+			['WEB-INF/img/green-marker-small.png'],
+			['WEB-INF/img/amber-marker-small.png'],
+			['WEB-INF/img/red-marker-small.png']
+		];
+			
+		function setMarkers(map) {
+			
+			var infoWindow = new google.maps.InfoWindow(), marker, i;
+			
+			for (var i = 0; i < ATMs.length; i++) {
+				var ATM = ATMs[i];
+				var imageNo = ATM[3];
+				var image = images[imageNo];
+				var marker = new google.maps.Marker({
+					position: {lat: ATM[1], lng: ATM[2]},
+					map: map,
+					icon: image[0],
+					title: ATM[0],
+					zIndex: ATM[3]
+				});
+				
+				google.maps.event.addListener(marker, 'click',(function(marker,i){
+					return function(){
+						infoWindow.setContent(infoWindowContent[i][0]);
+						infoWindow.open(map,marker);
+					}
+				})(marker,i));
+			}
+			var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+				this.setZoom(14);
+				google.maps.event.removeListener(boundsListener);
+			});
+			
+			$('#atm1').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4611962,-2.9706048));
+			});
+			$('#atm2').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.463285,-2.9731235));
+			});
+			$('#atm3').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4612505,-2.9737877));
+			});
+			$('#atm4').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4621971,-2.9661633));
+			});
+			$('#atm5').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4626629,-2.9840888));
+			});
+			$('#atm6').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4656217,-2.9868374));
+			});
+			$('#atm7').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4575219,-2.9860769));
+			});
+			$('#atm8').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4662291,-2.9607497));
+			});
+			$('#atm9').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.471109,-2.9800962));
+			});
+			$('#atm10').on('click', function(event) {
+				event.preventDefault();
+				map.panTo(new google.maps.LatLng(56.4695347,-2.9688852));
+			});
+		}
+	</script>
+	<script src="http://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+	
 	<script language="javascript"> 
 	
 	setInterval(function(){
-		
+
 	var videoList_js= "<%=cameraEvent%>";
 	if (videoList_js != "null")
 	{
+		atm2 = 2;
 		$('.bef-not').css("display", "none");
 		$('.aft-not').css("display", "block");
 	} else {
+		atm2 = 0;
 		$('.bef-not').css("display", "block");
 		$('.aft-not').css("display", "none");
 	}
