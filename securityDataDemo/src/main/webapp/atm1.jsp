@@ -61,32 +61,34 @@ try
 		
 		computer = data.get("Computer").toString();
 		
-		if (data.get("Event ID").toString() == "3221232506");
+		if (data.get("Event ID").toString().equals ("3221232506"));
 		{
 			uaDisconnected = "3221232506";
 			logged = data.get("Logged").toString();
 		}
-		if(data.get("Event ID").toString() == "2684616731");
+		
+		if(data.get("Event ID").toString().equals ("2684616731"));
 		{
 			atmDis = "2684616731";
 			logged = data.get("Logged").toString();
 		}
-		if (data.get("Event ID").toString() == "200001");
+		
+		if (data.get("Event ID").toString().equals("20001"));
 		{
 			usb = "20001";
 			logged = data.get("Logged").toString();
 		}
-		
-		if(data.get("Event") == "Camera Covered");
-		{
-			camera1 = "Camera Covered";
+	
+		//if(data.get("Event").toString() == "Camera Covered");
+		//{
+		//	camera1 = data.get("Event").toString();
 			
-		}
+		//}
 		
-		if(data.get("Event") == "Back of ATM");
-		{
-			camera2 = "Back of ATM";
-		}
+		//if(data.get("Event").toString() == "Back of ATM");
+		//{
+		//	camera2 = data.get("Event").toString();
+		//}
 		
 		//if (data.get("")
 			
@@ -108,7 +110,7 @@ response.addHeader("Refresh", "5");
 <h2>ATM: <span class = "result"><%if (computer != null) {out.print(computer);} else {out.print("NCR-352994MJ009");}%></span></h2>
 <h4>UA status: <span class="result"><%if (uaDisconnected != null) {out.print("UA terminated prematurely!");} else{out.print("Status good!");}%></span></h4> 
 <h4>ATM status: <span class="result"><%if (atmDis != null) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
-<h4>Issues: <span class="result"><%if (atmDis != null) {out.print("USB Illegally Inserted!");} else{out.print(" ");}%></span></h4> 
+<h4>Issues: <span class="result"><%if (usb != null) {out.print("USB Illegally Inserted!");} else{out.print(" ");}%></span></h4> 
 <h4>Issues: <span class="result"><%if (camera1 != null) {out.print("ATM camera Covered up!");} else{out.print(" ");}%></span></h4>
 <h4>Issues: <span class="result"><%if (camera2 != null) {out.print("Intruder behind ATM!");} else{out.print(" ");}%></span></h4>
 <h4>Logged: <span class="result"><%if (logged != null) {out.print(logged);} else{out.print(" ");}%></span></h4>
