@@ -221,8 +221,7 @@ body {
 
 .aft-not {
 	display: none;
-	//border: 3px solid #FF7A75;
-	border: 1px solid black;
+	border: 3px solid #FF7A75;
 	-webkit-animation-name: pulseBorder;
   	-webkit-animation-iteration-count: infinite;
   	-webkit-animation-timing-function: ease;
