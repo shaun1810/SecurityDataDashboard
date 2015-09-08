@@ -28,16 +28,16 @@ import = "java.util.*"
 
 
 <% 
-MongoClient mongo = new MongoClient("192.168.1.113", 27017);
+MongoClient mongo = new MongoClient("localhost",27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
-BasicDBObject query = new BasicDBObject("Computer" , "NCR-352994MJ009");
+BasicDBObject query = new BasicDBObject("Computer","NCR-352994MJ009");
 DBCursor cursor = collection.find(query);
 //BasicDBObject query2 = new BasicDBObject("Event ID", "3221232506");
 //DBCursor cursor2 = collection.find(query2);
-String uaDisconnected = null;
-String atmDis = null;
-String usb = null;
+Boolean uaDisconnected = false;
+Boolean atmDis = false;
+Boolean usb = false;
 //Boolean atmDis = false;
 
 Boolean unexpectedReboot = false;
@@ -49,8 +49,8 @@ String logged = null;
 String taskCat = null;
 String computer = null;
 String message = null;
-String camera1 = null;
-String camera2 = null;
+Boolean camera1 = false;
+Boolean camera2 = false;
 
 
 try
@@ -61,23 +61,23 @@ try
 		
 		computer = data.get("Computer").toString();
 		
-		if (data.get("Event ID").toString().equals ("3221232506"));
+		if (data.get("Event ID").toString().compareTo("20001") == 0)
 		{
-			uaDisconnected = "3221232506";
+			usb = true;
+			logged = data.get("Logged").toString();
+		}
+		if (data.get("Event ID").toString().compareTo("3221232506") == 0)
+		{
+			uaDisconnected = true;
+			logged = data.get("Logged").toString();
+		}
+		if(data.get("Event ID").toString().compareTo("2684616731") == 0)
+		{
+			atmDis = true;
 			logged = data.get("Logged").toString();
 		}
 		
-		if(data.get("Event ID").toString().equals ("2684616731"));
-		{
-			atmDis = "2684616731";
-			logged = data.get("Logged").toString();
-		}
-		
-		if (data.get("Event ID").toString().equals("20001"));
-		{
-			usb = "20001";
-			logged = data.get("Logged").toString();
-		}
+	
 	
 		//if(data.get("Event").toString() == "Camera Covered");
 		//{
@@ -108,11 +108,11 @@ response.addHeader("Refresh", "5");
 	%>
 
 <h2>ATM: <span class = "result"><%if (computer != null) {out.print(computer);} else {out.print("NCR-352994MJ009");}%></span></h2>
-<h4>UA status: <span class="result"><%if (uaDisconnected != null) {out.print("UA terminated prematurely!");} else{out.print("Status good!");}%></span></h4> 
-<h4>ATM status: <span class="result"><%if (atmDis != null) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
-<h4>Issues: <span class="result"><%if (usb != null) {out.print("USB Illegally Inserted!");} else{out.print(" ");}%></span></h4> 
-<h4>Issues: <span class="result"><%if (camera1 != null) {out.print("ATM camera Covered up!");} else{out.print(" ");}%></span></h4>
-<h4>Issues: <span class="result"><%if (camera2 != null) {out.print("Intruder behind ATM!");} else{out.print(" ");}%></span></h4>
+<h4>UA status: <span class="result"><%if (uaDisconnected == true) {out.print("UA terminated prematurely!");} else{out.print("Status good!");}%></span></h4> 
+<h4>ATM status: <span class="result"><%if (atmDis == true) {out.print("ATM Disconnected from the network!");} else{out.print("Status good!");}%></span></h4> 
+<h4>Issues: <span class="result"><%if (usb == true) {out.print("USB Illegally Inserted!");} else{out.print(" ");}%></span></h4> 
+<h4>Issues: <span class="result"><%if (camera1 == true) {out.print("ATM camera Covered up!");} else{out.print(" ");}%></span></h4>
+<h4>Issues: <span class="result"><%if (camera2 == true) {out.print("Intruder behind ATM!");} else{out.print(" ");}%></span></h4>
 <h4>Logged: <span class="result"><%if (logged != null) {out.print(logged);} else{out.print(" ");}%></span></h4>
 <!-- a href = "index.jsp">Home</a>
 <a href = "atm2.jsp">ATM 2</a-->
