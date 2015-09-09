@@ -19,7 +19,6 @@ DBCursor cursor = collection.find(query);
 String cameraEvent = null; 
 String computer = "NCR-3459kj";
 
-/*
 try
 {
 	while (cursor.hasNext())
@@ -33,8 +32,7 @@ try
 	finally {
 		cursor.close();
 	}
-*/
-cameraEvent = "cameraCovered";
+//cameraEvent = "cameraCovered";
 %>
 
 
