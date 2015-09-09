@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="com.mongodb.DB"
+	pageEncoding="ISO-8859-1" 
+	import="com.mongodb.DB"
 	import="com.mongodb.DBCollection" import="com.mongodb.DBCursor"
 	import="com.mongodb.ServerAddress" import="com.mongodb.DBObject"
 	import="com.mongodb.WriteConcern" import="com.mongodb.MongoException"
 	import="com.mongodb.BasicDBObject" import="com.mongodb.MongoClient"
 	import="java.util.Arrays" import="java.util.*" import="java.io.File"
-	import="org.apache.commons.net.ftp.*"%>
-
-
-
+	import="org.apache.commons.net.ftp.*"
+%>
 <%
 
-MongoClient mongo = new MongoClient("192.168.1.113", 27017);
+MongoClient mongo = new MongoClient("localhost",27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
 BasicDBObject query = new BasicDBObject("Event", "Camera Covered");
 DBCursor cursor = collection.find(query);
 String cameraEvent = null; 
-String computer = "NCR-3459kj";
+String computer = "NCR-352994MJ009";
+
 
 try
 {
@@ -658,6 +658,7 @@ try
 			$('.bef-not').css("display", "block");
 			$('.aft-not').css("display", "none");
 			ATMs[1][3] = 0;
+			 
 			initMap();
 		});
 		
