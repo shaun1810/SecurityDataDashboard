@@ -32,6 +32,47 @@ try
 	finally {
 		cursor.close();
 	}
+//MongoClient mongo2 = new MongoClient("localhost",27017);
+DB db2 = mongo.getDB("WL");
+DBCollection collection2 = db.getCollection("testCol");
+BasicDBObject query2 = new BasicDBObject("Computer","NCR-352994MJ009");
+DBCursor cursor2 = collection.find(query2);
+//BasicDBObject query2 = new BasicDBObject("Event ID", "3221232506");
+//DBCursor cursor2 = collection.find(query2);
+Boolean uaDisconnected = false;
+Boolean atmDis = false;
+Boolean usb = false;
+
+
+try
+{
+	while (cursor2.hasNext())
+	{
+		DBObject data = cursor2.next();
+		
+		 if (data.get("Event ID").toString().compareTo("20001") == 0)
+		 {
+				usb = true;
+		 }
+		if (data.get("Event ID").toString().compareTo("3221232506") == 0)
+		{
+			uaDisconnected = true;
+			
+		}
+		if(data.get("Event ID").toString().compareTo("2684616731") == 0)
+		{
+			atmDis = true;
+			
+		}
+		
+	}
+}
+	finally {
+		cursor2.close();
+		
+	}
+
+
 
 //cameraEvent = "cameraCovered";
 %>
@@ -85,7 +126,7 @@ try
 	href="/securityDataDemo/src/main/webapp/WEB-INF/css/libs/jquery-jvectormap-1.2.2.css"
 	type="text/css" />
 <link rel="stylesheet"
-	href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test4.css"
+	href="/securityDataDemo/src/main/webapp/WEB-INF/css/compiled/test5.css"
 	type="text/css" />
 
 <!-- Favicon -->
@@ -295,7 +336,22 @@ try
 													</div>
 												</div>
 											</div>
-											<div id="atm1" class="col-md-12 atm-info">
+											<div id="atm1" class="col-md-12 atm-info aft-not2">
+												<div class="row">
+													<div class="col-sm-5">
+														<span class="title">ATM 352994M</span> <span
+															class="address">128 Reform Street<br>Dundee
+														</span>
+													</div>
+													<div class="col-sm-5 description">
+														<span class="warning"><i class="fa fa-bullseye"></i>USB Inserted</span>
+													</div>
+													<div class="col-sm-2 ticket">
+														<i class="fa fa-check-circle alert reset2"></i>
+													</div>
+												</div>
+											</div>
+											<div id="atm1" class="col-md-12 atm-info bef-not2">
 												<div class="row">
 													<div class="col-sm-5">
 														<span class="title">ATM 352994M</span> <span
@@ -643,12 +699,20 @@ try
 		
 		// List of ATMs on map
 		var atm2;
+		var atm1;
 		
 		var videoList_js2= "<%=cameraEvent%>";
 		if (videoList_js2 != "null") {
 			atm2 = 2;
 		} else {
 			atm2 = 0;
+		}
+		
+		var usbDetector = "<%=usb%>";
+		if (usbDetector != null){
+			atm1 = 2;
+		}else{
+			atm1 = 0;	
 		}
 		
 		
@@ -662,9 +726,19 @@ try
 			 
 			initMap();
 		});
+		$('.reset2').click(function() {
+			$('.aft-not2').css("-webkit-animation-name", "zero");
+			$('.aft-not2').css("border", "3px solid transparent");
+			$('.reset2').css("display", "none");
+			$('.bef-not2').css("display", "block");
+			$('.aft-not2').css("display", "none");
+			ATMs[0][3] = 0;
+			 
+			initMap();
+		});
 		
 		var ATMs = [
-			['ATM 1', 56.4611962, -2.9706048, 0],
+			['ATM 1', 56.4611962, -2.9706048, atm1],
 			['ATM 2', 56.463285, -2.9731235, atm2],
 			['ATM 3', 56.4612505, -2.9737877, 0],
 			['ATM 4', 56.4621971, -2.9661633, 0],
@@ -775,7 +849,7 @@ try
 	
 	var refreshIntervalId = setInterval(function(){
 	var videoList_js= "<%=cameraEvent%>";
-	if (videoList_js != "null")
+	if (videoList_js != null)
 	{
 		atm2 = 2;
 		$('.bef-not').css("display", "none");
@@ -785,6 +859,19 @@ try
 		atm2 = 0;
 		$('.bef-not').css("display", "block");
 		$('.aft-not').css("display", "none");
+	}
+	
+	var USB_not= "<%=usb%>";
+	if (USB_not != null)
+	{
+		atm2 = 2;
+		$('.bef-not2').css("display", "none");
+		$('.aft-not2').css("display", "block");
+		clearInterval(refreshIntervalId);
+	} else {
+		atm2 = 0;
+		$('.bef-not2').css("display", "block");
+		$('.aft-not2').css("display", "none");
 	}
 	}, 3000);
 	
