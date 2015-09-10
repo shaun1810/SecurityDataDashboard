@@ -10,6 +10,8 @@
 %>
 <%
 
+response.addHeader("Refresh", "5");
+
 MongoClient mongo = new MongoClient("192.168.1.113",27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
@@ -41,7 +43,7 @@ DBCursor cursor2 = collection.find(query2);
 //DBCursor cursor2 = collection.find(query2);
 Boolean uaDisconnected = false;
 Boolean atmDis = false;
-Boolean usb = false;
+String usb = null;
 
 
 try
@@ -52,7 +54,7 @@ try
 		
 		if (data.get("Event ID").toString().compareTo("20001") == 0)
 		{
-			usb = true;
+			usb = data.get("Event ID").toString();
 			
 		}
 		if (data.get("Event ID").toString().compareTo("3221232506") == 0)
@@ -682,9 +684,9 @@ try
 		src="/securityDataDemo/src/main/webapp/WEB-INF/js/jquery.waypoints.js"></script>
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/sticky.js"></script>
 
-	<!-- theme scripts -->
+	<!-- theme scripts >
 	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/scripts.js"></script>
-	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/pace.min.js"></script>
+	<script src="/securityDataDemo/src/main/webapp/WEB-INF/js/pace.min.js"></script-->
 
 	<!-- Google Maps Settings -->
 	<script>
@@ -710,7 +712,7 @@ try
 		}
 		
 		var usbDetector = "<%=usb%>";
-		if (usbDetector != null){
+		if (usbDetector == "20001"){
 			atm1 = 2;
 		}else{
 			atm1 = 0;	
@@ -863,7 +865,7 @@ try
 	}
 	
 	var USB_not= "<%=usb%>";
-	if (USB_not != "null")
+	if (USB_not == "20001")
 	{
 		atm2 = 2;
 		$('.bef-not2').css("display", "none");
