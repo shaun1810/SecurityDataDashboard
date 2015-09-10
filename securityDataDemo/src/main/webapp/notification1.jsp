@@ -39,7 +39,7 @@ import = "java.util.*"
 </style>
 </head>
 <% 
-MongoClient mongo = new MongoClient("192.168.1.113", 27017);
+MongoClient mongo = new MongoClient("localhost", 27017);
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
 BasicDBObject query = new BasicDBObject("Computer", "NCR-352994MJ009");

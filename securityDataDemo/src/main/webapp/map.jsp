@@ -10,9 +10,13 @@
 %>
 <%
 
+<<<<<<< HEAD
 response.addHeader("Refresh", "5");
 
 MongoClient mongo = new MongoClient("192.168.1.113",27017);
+=======
+MongoClient mongo = new MongoClient("localhost",27017);
+>>>>>>> origin/master
 DB db = mongo.getDB("WL");
 DBCollection collection = db.getCollection("testCol");
 BasicDBObject query = new BasicDBObject("Event", "Camera Covered");
@@ -34,7 +38,7 @@ try
 	finally {
 		cursor.close();
 	}
-//MongoClient mongo2 = new MongoClient("192.168.1.113",27017);
+//MongoClient mongo2 = new MongoClient("localhost",27017);
 DB db2 = mongo.getDB("WL");
 DBCollection collection2 = db.getCollection("testCol");
 BasicDBObject query2 = new BasicDBObject("Computer","NCR-352994MJ009");
@@ -52,11 +56,19 @@ try
 	{
 		DBObject data = cursor2.next();
 		
+
 		if (data.get("Event ID").toString().compareTo("20001") == 0)
 		{
 			usb = data.get("Event ID").toString();
 			
 		}
+
+		/*
+		 if (data.get("Event ID").toString().compareTo("20001") == 0)
+		 {
+				usb = true;
+		 }
+		*/
 		if (data.get("Event ID").toString().compareTo("3221232506") == 0)
 		{
 			uaDisconnected = true;
@@ -852,7 +864,7 @@ try
 	
 	var refreshIntervalId = setInterval(function(){
 	var videoList_js= "<%=cameraEvent%>";
-	if (videoList_js != "null")
+	if (videoList_js != null)
 	{
 		atm2 = 2;
 		$('.bef-not').css("display", "none");
@@ -865,7 +877,11 @@ try
 	}
 	
 	var USB_not= "<%=usb%>";
+<<<<<<< HEAD
 	if (USB_not == "20001")
+=======
+	if (USB_not != null)
+>>>>>>> origin/master
 	{
 		atm2 = 2;
 		$('.bef-not2').css("display", "none");
